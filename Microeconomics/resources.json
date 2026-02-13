@@ -1,0 +1,31 @@
+[
+  {
+    "section": "Official & Voucher",
+    "items": [
+      { "title": "Modern States: Principles of Microeconomics", "url": "https://modernstates.org/course/principles-of-microeconomics/", "tag": "Free Voucher" },
+      { "title": "College Board Official Exam Info", "url": "https://clep.collegeboard.org/clep-exams/principles-of-microeconomics", "tag": "Official" },
+      { "title": "Free-Clep-Prep Guide: Microeconomics", "url": "http://www.free-clep-prep.com/Principles-of-Microeconomics-CLEP.html", "tag": "Must-Read" }
+    ]
+  },
+  {
+    "section": "The 'Gold Standard' Resources",
+    "items": [
+      { "title": "ACDC Economics (Jacob Clifford)", "url": "https://www.youtube.com/playlist?list=PL6B2DBE4C2FC8F845", "tag": "Master Playlist" },
+      { "title": "Khan Academy: AP Microeconomics", "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics", "tag": "Comprehensive" }
+    ]
+  },
+  {
+    "section": "Concept Deep Dives",
+    "items": [
+      { "title": "OpenStax: Microeconomics 3e", "url": "https://openstax.org/details/books/principles-microeconomics-3e", "tag": "Reading" },
+      { "title": "Investopedia: Microeconomics Terms", "url": "https://www.investopedia.com/terms/m/microeconomics.asp", "tag": "Glossary" }
+    ]
+  },
+  {
+    "section": "Practice Exams",
+    "items": [
+      { "title": "4Tests: CLEP Micro Practice", "url": "https://www.4tests.com/clep-micro-economics", "tag": "Practice" },
+      { "title": "Study.com: Microeconomics Practice", "url": "https://study.com/academy/exam/course/clep-principles-of-microeconomics-practice-study-guide.html", "tag": "Diagnostic" }
+    ]
+  }
+]

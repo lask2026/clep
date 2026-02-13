@@ -1,0 +1,40 @@
+[
+  {
+    "section": "Official & Essential",
+    "items": [
+      { "title": "Modern States: Intro to Psych", "url": "https://modernstates.org/course/introduction-to-psychology/", "tag": "Free Voucher" },
+      { "title": "College Board Exam Topics", "url": "https://clep.collegeboard.org/clep-exams/introductory-psychology", "tag": "Official" },
+      { "title": "Free-Clep-Prep Study Guide", "url": "http://www.free-clep-prep.com/Introductory-Psychology-CLEP.html", "tag": "Must-read" }
+    ]
+  },
+  {
+    "section": "Video Lessons",
+    "items": [
+      { "title": "CrashCourse Psychology Playlist", "url": "https://www.youtube.com/playlist?list=PL8dPuuaLjXtOPRKzVLY0jJY-uHOH9KVU6", "tag": "Video" },
+      { "title": "Mr. Sinn Psych Review", "url": "https://youtube.com/@mrsinn", "tag": "Video" },
+      { "title": "Mr. Carter's Psych Channel", "url": "https://youtube.com/playlist?list=PL_HtO9blqN3DWJfQOmjSSbs1kbz8VyLeQ", "tag": "Detailed" }
+    ]
+  },
+  {
+    "section": "Flashcards & Quizlet",
+    "items": [
+      { "title": "Comprehensive Psych Terms (Reddit Pick)", "url": "https://quizlet.com/839446077/clep-intro-to-psychology-flash-cards/", "tag": "Flashcards" },
+      { "title": "Mr. Carter’s Unit-by-Unit Sets", "url": "https://quizlet.com/user/markwardlow9/folders", "tag": "Flashcards" },
+      { "title": "CLEP Psychology Key People", "url": "https://quizlet.com/20456563/clep-psychology-famous-people-flash-cards/", "tag": "Theorists" }
+    ]
+  },
+  {
+    "section": "Practice Exams",
+    "items": [
+      { "title": "REA Practice Tests (Archive.org)", "url": "https://archive.org/details/clepintroductory0000shar", "tag": "Practice" },
+      { "title": "Peterson’s Master the CLEP (Free PDF)", "url": "https://archive.org/details/master-the-clepintroductory-psychology-exam", "tag": "Practice" }
+    ]
+  },
+  {
+    "section": "Community Resources",
+    "items": [
+      { "title": "Reddit r/CLEP - Success Stories", "url": "https://www.reddit.com/r/clep/", "tag": "Community" },
+      { "title": "CLEP Psych Review Notes (Google Doc)", "url": "https://docs.google.com/document/d/1XT4fTsyTE7k9U2CNNF-4d8VxaCcS5LQ2kdrR7LdSLPs/edit", "tag": "Study-Notes" }
+    ]
+  }
+]

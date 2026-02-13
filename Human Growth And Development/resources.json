@@ -1,0 +1,32 @@
+[
+  {
+    "section": "Official & Voucher",
+    "items": [
+      { "title": "Modern States: Human Growth & Dev", "url": "https://modernstates.org/course/human-growth-and-development/", "tag": "Free Voucher" },
+      { "title": "College Board Exam Description", "url": "https://clep.collegeboard.org/clep-exams/human-growth-and-development", "tag": "Official" },
+      { "title": "Lumen Learning PPT Study Slides", "url": "https://courses.lumenlearning.com/wm-lifespandevelopment/chapter/powerpoints/", "tag": "Essential" }
+    ]
+  },
+  {
+    "section": "The 'Ultimate' Quizlet Sets",
+    "items": [
+      { "title": "The ULTIMATE HGD Study Guide", "url": "https://quizlet.com/704416030/the-ultimate-human-growth-development-hgd-clep-study-guide-flash-cards/", "tag": "Master Set" },
+      { "title": "HGD Theories & Theorists Only", "url": "https://quizlet.com/706249607/human-growth-and-development-hgd-clep-theoriestheorists-experiments-flash-cards/", "tag": "Theorists" },
+      { "title": "HGD Ages & Landmarks", "url": "https://quizlet.com/706530015/human-growth-and-development-hgd-clep-ages-landmarks-flash-cards/", "tag": "Milestones" }
+    ]
+  },
+  {
+    "section": "Video Review",
+    "items": [
+      { "title": "Crash Course: The Growth of Knowledge", "url": "https://www.youtube.com/watch?v=8nz2dtv--ok", "tag": "Piaget/Vygotsky" },
+      { "title": "Lifespan Development Psychology Playlist", "url": "https://www.youtube.com/playlist?list=PL5tGpZwHqnwB6uVIG8kvD-frP-dyHicqf", "tag": "Comprehensive" }
+    ]
+  },
+  {
+    "section": "Practice & Documents",
+    "items": [
+      { "title": "Free-Clep-Prep HGD Guide", "url": "http://www.free-clep-prep.com/Human-Growth-and-Development-CLEP.html", "tag": "Review" },
+      { "title": "OpenStax Lifespan Development (PDF)", "url": "https://openstax.org/details/books/lifespan-development", "tag": "Textbook" }
+    ]
+  }
+]

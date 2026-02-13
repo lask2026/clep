@@ -1,0 +1,32 @@
+[
+  {
+    "section": "Official & Voucher",
+    "items": [
+      { "title": "Modern States: Intro to Sociology", "url": "https://modernstates.org/course/introductory-sociology/", "tag": "Free Voucher" },
+      { "title": "College Board Exam Guide", "url": "https://clep.collegeboard.org/clep-exams/introductory-sociology", "tag": "Official" },
+      { "title": "OpenStax Sociology 3e (Textbook)", "url": "https://openstax.org/details/books/introduction-sociology-3e", "tag": "Reading" }
+    ]
+  },
+  {
+    "section": "Videos & Concepts",
+    "items": [
+      { "title": "CrashCourse Sociology Playlist", "url": "https://www.youtube.com/playlist?list=PL8dPuuaLjXtMJ-AfB_7J1538YKWkZAnGA", "tag": "Essential" },
+      { "title": "The Three Main Perspectives", "url": "https://www.youtube.com/watch?v=DbTt_ySTjaY", "tag": "Concept" }
+    ]
+  },
+  {
+    "section": "Quizlet & Flashcards",
+    "items": [
+      { "title": "Sociology CLEP - 355 Terms (Master Set)", "url": "https://quizlet.com/12107212/sociology-clep-flash-cards/", "tag": "Top Pick" },
+      { "title": "Sociology People & Theorists", "url": "https://quizlet.com/429662069/sociology-people-flash-cards/", "tag": "Theorists" },
+      { "title": "Comprehensive Concepts Set", "url": "https://quizlet.com/1074089936/sociology-clep-fund-flash-cards/", "tag": "Review" }
+    ]
+  },
+  {
+    "section": "Practice Exams",
+    "items": [
+      { "title": "Peterson’s Practice Test (Archive Link)", "url": "https://web.archive.org/web/20210309053235/http://www.nelnetsolutions.com/pdf/clep_sociology_q_print.pdf", "tag": "Practice" },
+      { "title": "Free-Clep-Prep Sociology Guide", "url": "http://www.free-clep-prep.com/Introductory-Sociology-CLEP.html", "tag": "Review" }
+    ]
+  }
+]

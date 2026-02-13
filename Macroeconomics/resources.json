@@ -1,0 +1,30 @@
+[
+  {
+    "section": "Official & Voucher",
+    "items": [
+      { "title": "Modern States: Principles of Macroeconomics", "url": "https://modernstates.org/course/principles-of-macroeconomics/", "tag": "Free Voucher" },
+      { "title": "College Board CLEP Exam Description", "url": "https://clep.collegeboard.org/clep-exams/principles-of-macroeconomics", "tag": "Official" },
+      { "title": "Free-Clep-Prep Macroeconomics Practice", "url": "http://www.free-clep-prep.com/Principles-of-Macroeconomics-CLEP.html", "tag": "Must-Read" }
+    ]
+  },
+  {
+    "section": "Comprehensive Courses",
+    "items": [
+      { "title": "Khan Academy: AP/College Macroeconomics", "url": "https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics", "tag": "Concept Mastery" },
+      { "title": "ACDC Economics (Jacob Clifford)", "url": "https://www.youtube.com/c/ACDCLeadership/playlists", "tag": "Gold Standard" }
+    ]
+  },
+  {
+    "section": "Concept Deep Dives",
+    "items": [
+      { "title": "OpenStax: Principles of Macroeconomics 3e", "url": "https://openstax.org/details/books/principles-macroeconomics-3e", "tag": "Textbook" },
+      { "title": "Investopedia Financial Term Dictionary", "url": "https://www.investopedia.com/financial-term-dictionary-4769738", "tag": "Glossary" }
+    ]
+  },
+  {
+    "section": "Practice Exams",
+    "items": [
+      { "title": "Practice Tester - CLEP Macroeconomics", "url": "https://www.practicetester.com/clep-macroeconomics/test", "tag": "Practice" }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "section": "Official & Voucher",
+    "items": [
+      { "title": "Modern States: Educational Psychology", "url": "https://modernstates.org/course/introduction-to-educational-psychology/", "tag": "Free Voucher" },
+      { "title": "College Board Official Exam Info", "url": "https://clep.collegeboard.org/clep-exams/introduction-educational-psychology", "tag": "Official" },
+      { "title": "Free-Clep-Prep Guide: Ed Psych", "url": "http://www.free-clep-prep.com/Introduction-to-Educational-Psychology-CLEP.html", "tag": "Must-Read" }
+    ]
+  },
+  {
+    "section": "The 'Gold Standard' Quizlets",
+    "items": [
+      { "title": "Intro to Ed Psych (Comprehensive)", "url": "https://quizlet.com/6193475/intro-to-educational-psychology-clep-flash-cards/", "tag": "Master Set" },
+      { "title": "Ed Psych Theories & Names", "url": "https://quizlet.com/341571370/educational-psychology-flash-cards/", "tag": "Theorists" },
+      { "title": "Classroom Management & Pedagogy", "url": "https://quizlet.com/313286779/clep-2018-educational-psychology-flash-cards/", "tag": "Classroom" }
+    ]
+  },
+  {
+    "section": "Concept Deep Dives",
+    "items": [
+      { "title": "CrashCourse: How We Learn", "url": "https://www.youtube.com/watch?v=8nz2dtv--ok", "tag": "Cognitive" },
+      { "title": "Theories of Learning (Cheat Sheet)", "url": "https://www.simplypsychology.org/learning-theories.html", "tag": "Reading" },
+      { "title": "Bloom’s Taxonomy Explained", "url": "https://www.youtube.com/watch?v=ayefSTAnCR8", "tag": "Pedagogy" }
+    ]
+  },
+  {
+    "section": "Practice Exams",
+    "items": [
+      { "title": "Peterson's Practice Test (Archive)", "url": "https://web.archive.org/web/20210309053235/http://www.nelnetsolutions.com/pdf/clep_edpsych_q_print.pdf", "tag": "Practice" },
+      { "title": "Practice Quiz: Ed Psych Prep", "url": "https://practicequiz.com/clepeducationalpsych", "tag": "Quick-Quiz" }
+    ]
+  }
+]

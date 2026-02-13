@@ -1,0 +1,356 @@
+# Psychology
+
+## Module: History, Approaches, and Methods
+- What psychology studies
+  - Behavior
+  - Mental processes
+  - Goals of science
+    - Describe
+    - Explain
+    - Predict
+    - Influence / improve
+- Major approaches / perspectives
+  - Biological
+    - Brain structures
+    - Neurotransmitters
+    - Hormones
+  - Behavioral
+    - Conditioning
+    - Reinforcement/punishment
+    - Observable behavior focus
+  - Cognitive
+    - Attention
+    - Memory
+    - Thinking / problem-solving
+  - Psychodynamic
+    - Unconscious processes
+    - Early experiences
+    - Defense mechanisms
+  - Humanistic
+    - Free will
+    - Growth / self-actualization
+    - Self-concept
+  - Biopsychosocial
+    - Biology + psychology + environment interaction
+- Research methods
+  - Descriptive methods
+    - Case study
+      - Depth; rare cases
+      - Limitation: not generalizable
+    - Naturalistic observation
+      - Real-world behavior
+      - Limitation: observer effect; no control
+    - Survey / interview
+      - Wording effects; sampling bias
+  - Correlational research
+    - Correlation coefficient (r)
+      - Direction: + / –
+      - Strength: closer to 1 means stronger
+    - Limits
+      - Correlation ≠ causation
+      - Third-variable problem
+  - Experimental research
+    - Core parts
+      - Hypothesis
+      - Operational definitions
+      - Variables: IV / DV
+      - Control vs experimental group
+    - Sampling vs assignment
+      - Random sampling → represent population
+      - Random assignment → equalize groups
+    - Confounds and control
+      - Placebo
+      - Double-blind
+      - Replication
+- Ethics
+  - Human research
+    - Informed consent
+    - Confidentiality
+    - Right to withdraw
+    - Debriefing
+  - Animal research
+    - Minimize harm
+    - Justify need
+
+## Module: Biological Bases of Behavior
+- Neuron + neural communication
+  - Parts
+    - Dendrites (input)
+    - Soma (cell body)
+    - Axon (output)
+    - Myelin (speed)
+  - Electrical signaling
+    - Resting potential
+    - Action potential
+    - All-or-none
+  - Synapse
+    - Neurotransmitter release
+    - Reuptake
+    - Agonists vs antagonists (concept)
+- Neurotransmitters (common pairings)
+  - ACh
+    - Muscle action
+    - Learning/memory
+  - Dopamine
+    - Reward / motivation
+    - Movement
+  - Serotonin
+    - Mood
+    - Sleep
+  - Norepinephrine
+    - Alertness
+    - Stress response
+  - GABA
+    - Inhibitory calming
+  - Glutamate
+    - Excitatory learning/memory
+- Nervous system
+  - Central nervous system (CNS)
+    - Brain
+    - Spinal cord
+  - Peripheral nervous system (PNS)
+    - Somatic (voluntary movement)
+    - Autonomic (automatic)
+      - Sympathetic (arouse / fight-flight)
+      - Parasympathetic (calm / rest-digest)
+- Brain structures
+  - Brainstem
+    - Medulla (breathing/heartbeat)
+  - Cerebellum
+    - Balance
+    - Coordination
+  - Limbic system
+    - Amygdala (fear/anger)
+    - Hippocampus (new memories)
+    - Hypothalamus (homeostasis; hunger; temp)
+  - Cortex + lobes
+    - Frontal (planning; motor)
+    - Parietal (touch; spatial)
+    - Temporal (hearing; language)
+    - Occipital (vision)
+- Endocrine system
+  - Pituitary (“master gland”)
+  - Adrenal (stress hormones)
+  - Thyroid (metabolism)
+- Brain measurement/scan methods
+  - EEG (electrical activity; sleep/seizures)
+  - CT (structure)
+  - MRI (structure detail)
+  - fMRI (activity via blood flow)
+  - PET (activity via tracers)
+
+## Module: Sensation and Perception
+- Big picture
+  - Sensation = detect stimuli
+  - Perception = interpret meaning
+- Core concepts
+  - Transduction (energy → neural signals)
+  - Thresholds
+    - Absolute threshold (minimum to detect)
+    - Difference threshold / JND (minimum change noticed)
+  - Sensory adaptation (reduced sensitivity over time)
+- Vision
+  - Retina
+    - Rods (low light; B/W)
+    - Cones (color; detail)
+  - Fovea (sharp vision center)
+  - Color vision (concepts)
+    - Trichromatic theory
+    - Opponent-process theory
+- Perception principles
+  - Gestalt grouping
+    - Figure–ground
+    - Proximity
+    - Similarity
+    - Closure
+  - Depth perception
+    - Binocular cues (retinal disparity)
+    - Monocular cues (relative size; interposition)
+  - Perceptual constancy
+    - Size constancy
+    - Shape constancy
+    - Brightness constancy
+
+## Module: States of Consciousness
+- Sleep
+  - Sleep cycles
+    - NREM stages (light → deeper)
+    - REM (dreaming; memory consolidation idea)
+  - Common disorders
+    - Insomnia
+    - Narcolepsy
+    - Sleep apnea
+- Altered states
+  - Hypnosis
+    - Suggestibility
+    - Pain reduction (concept)
+  - Meditation
+    - Attention control (concept)
+- Psychoactive substances
+  - Depressants
+    - Alcohol (concept)
+    - Sedatives (concept)
+  - Stimulants
+    - Caffeine (concept)
+    - Nicotine (concept)
+  - Hallucinogens
+    - LSD / psilocybin (concept)
+  - Opioids
+    - Pain relief + high addiction risk
+  - Key terms
+    - Tolerance
+    - Dependence
+    - Withdrawal
+
+## Module: Learning
+- Classical conditioning
+  - Building blocks
+    - UCS → UCR
+    - CS → CR
+  - Processes
+    - Acquisition
+    - Extinction
+    - Spontaneous recovery
+    - Generalization
+    - Discrimination
+  - Real-life pattern
+    - Predicting events (signals)
+- Operant conditioning
+  - Consequences shape behavior
+    - Reinforcement increases behavior
+      - Positive reinforcement (add good)
+      - Negative reinforcement (remove bad)
+    - Punishment decreases behavior
+      - Positive punishment (add bad)
+      - Negative punishment (remove good)
+  - Tools
+    - Shaping (reward closer steps)
+    - Schedules of reinforcement
+      - Fixed ratio (FR)
+      - Variable ratio (VR)
+      - Fixed interval (FI)
+      - Variable interval (VI)
+- Observational learning
+  - Modeling
+  - Vicarious reinforcement
+  - Key idea
+    - Learn without direct reward/punishment
+
+## Module: Cognition
+- Memory systems
+  - Sensory memory
+    - Very brief (iconic/echoic concepts)
+  - Short-term / working memory
+    - Holds + manipulates information
+    - Chunking
+  - Long-term memory
+    - Explicit (conscious)
+      - Episodic (events)
+      - Semantic (facts)
+    - Implicit (nonconscious)
+      - Procedural (skills)
+      - Priming (concept)
+- Memory processes
+  - Encoding
+    - Effortful vs automatic
+    - Spacing effect (concept)
+  - Storage
+    - Distributed across networks (concept)
+  - Retrieval
+    - Recall vs recognition
+    - Cues / context effects (concept)
+- Forgetting + errors
+  - Interference
+    - Proactive interference
+    - Retroactive interference
+  - Retrieval failure
+    - Tip-of-the-tongue (concept)
+  - Reconstruction
+    - Misinformation effect (concept)
+- Thinking + decision-making
+  - Heuristics
+    - Availability
+    - Representativeness
+  - Biases
+    - Confirmation bias
+  - Problem-solving limits
+    - Functional fixedness
+    - Mental set (concept)
+
+## Module: Motivation and Emotion
+- Motivation basics
+  - Intrinsic motivation
+  - Extrinsic motivation
+  - Overjustification effect
+- Needs / drive ideas
+  - Maslow
+    - Physiological
+    - Safety
+    - Love/belonging
+    - Esteem
+    - Self-actualization
+- Emotion theories
+  - James–Lange
+    - Body response → emotion label
+  - Cannon–Bard
+    - Emotion + body response together
+  - Schachter–Singer (two-factor)
+    - Arousal + cognitive label
+- Stress (concept-level)
+  - Stressors
+  - Coping styles
+    - Problem-focused vs emotion-focused
+
+## Module: Developmental Psychology Across the Lifespan
+- Research designs
+  - Cross-sectional (different ages now)
+  - Longitudinal (same people over time)
+- Cognitive development (Piaget)
+  - Sensorimotor
+    - Object permanence
+  - Preoperational
+    - Egocentrism
+    - Conservation errors
+  - Concrete operational
+    - Conservation success
+    - Logical reasoning about concrete things
+  - Formal operational
+    - Abstract reasoning
+- Psychosocial development (Erikson)
+  - Identity-related and relationship-related conflicts across life
+  - Know the idea: each stage has a central challenge
+- Moral development (Kohlberg)
+  - Preconventional (avoid punishment / gain reward)
+  - Conventional (rules / social approval)
+  - Postconventional (principles)
+- Attachment
+  - Secure
+  - Insecure
+    - Avoidant
+    - Ambivalent/resistant
+    - Disorganized
+
+## Module: Personality
+- Psychodynamic
+  - Id / ego / superego
+  - Defense mechanisms
+    - Repression
+    - Projection
+    - Rationalization
+    - Displacement
+- Humanistic
+  - Rogers
+    - Self-concept
+    - Unconditional positive regard
+    - Incongruence (real vs ideal self)
+- Trait
+  - Big Five (OCEAN)
+  - Stability vs situation effects (concept)
+- Social-cognitive
+  - Locus of control (internal/external)
+  - Self-efficacy
+  - Reciprocal determinism (person–behavior–environment)
+- Assessment (concept buckets)
+  - Self-report inventories
+  - Projective tests (concept)
+  - Reliability vs validity (carryover concept)
