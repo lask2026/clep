@@ -278,48 +278,6 @@ def list_datatables(subject_dir: str):
         out.append({"id": fid, "name": n, "full": full})
     return out
 
-    # Default behavior: each CSV/JSON file is its own table
-    results = []
-
-    dirs = _datatable_dirs(subject_dir)
-    if dirs:
-        for d in dirs:
-            for fname in sorted(os.listdir(d)):
-                lo = fname.lower()
-                if fname.startswith("."):
-                    continue
-                if not (lo.endswith(".csv") or lo.endswith(".json")):
-                    continue
-                full = os.path.join(d, fname)
-                if os.path.isfile(full):
-                    results.append((fname, _pretty_sheet_name(fname), full))
-    else:
-        for fname in sorted(os.listdir(subject_dir)):
-            lo = fname.lower()
-            if fname.startswith("."):
-                continue
-            if not (lo.endswith(".csv") or lo.endswith(".json")):
-                continue
-            if not any(k in lo for k in ("table", "datatable", "sheet")):
-                continue
-            full = os.path.join(subject_dir, fname)
-            if os.path.isfile(full):
-                results.append((fname, _pretty_sheet_name(fname), full))
-
-    used = {}
-    out = []
-    for fid, name, full in results:
-        n = name
-        if n in used:
-            used[n] += 1
-            n = f"{n} ({used[name]})"
-        else:
-            used[n] = 1
-        out.append({"id": fid, "name": n, "full": full})
-    return out
-
-
-
 def load_table_file(full_path: str):
     lo = full_path.lower()
     if lo.endswith(".csv"):
@@ -352,6 +310,8 @@ def load_table_file(full_path: str):
 
 
 # -------- Flashcards --------
+_FLASHCARDS_CACHE = {}  # (subject, abs_path) -> {"mtime": float, "cards": [...]}
+
 def _flashcards_paths(subject_dir: str):
     return [
         os.path.join(subject_dir, "flashcards", "flashcards.csv"),
@@ -367,8 +327,14 @@ def load_flashcards(subject_dir: str):
     path = next((p for p in _flashcards_paths(subject_dir) if os.path.exists(p)), None)
     if not path:
         return []
+    abs_path = os.path.abspath(path)
+    key = (os.path.abspath(subject_dir), abs_path)
+    mtime = os.path.getmtime(abs_path)
+    cached = _FLASHCARDS_CACHE.get(key)
+    if cached and cached.get("mtime") == mtime:
+        return cached.get("cards") or []
 
-    with open(path, "r", encoding="utf-8-sig", newline="") as f:
+    with open(abs_path, "r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames or []
         lower_map = {c.strip().lower(): c for c in fieldnames}
@@ -399,6 +365,7 @@ def load_flashcards(subject_dir: str):
                 "module": module,
                 "clep_trap": clep_trap
             })
+        _FLASHCARDS_CACHE[key] = {"mtime": mtime, "cards": cards}
         return cards
 
 
@@ -418,6 +385,8 @@ def flashcard_modules(cards):
 
 
 # -------- Quiz --------
+_QUIZ_CACHE = {}  # (subject, abs_path) -> {"mtime": float, "items": [...], "path": str}
+
 def _quiz_paths(subject_dir: str):
     return [
         os.path.join(subject_dir, "quiz", "quiz.csv"),
@@ -435,8 +404,14 @@ def load_quiz(subject_dir: str):
     path = next((p for p in _quiz_paths(subject_dir) if os.path.exists(p)), None)
     if not path:
         return [], path
+    abs_path = os.path.abspath(path)
+    key = (os.path.abspath(subject_dir), abs_path)
+    mtime = os.path.getmtime(abs_path)
+    cached = _QUIZ_CACHE.get(key)
+    if cached and cached.get("mtime") == mtime:
+        return (cached.get("items") or []), cached.get("path", abs_path)
 
-    with open(path, "r", encoding="utf-8-sig", newline="") as f:
+    with open(abs_path, "r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames or []
         lower_map = {c.strip().lower(): c for c in fieldnames}
@@ -503,7 +478,8 @@ def load_quiz(subject_dir: str):
                 "clep_trap": clep_trap,
             })
 
-        return items, path
+        _QUIZ_CACHE[key] = {"mtime": mtime, "items": items, "path": abs_path}
+        return items, abs_path
 
 
 def quiz_modules(items):
@@ -524,6 +500,8 @@ def quiz_modules(items):
 
 
 # -------- Resources --------
+_RESOURCES_CACHE = {}  # (subject, abs_path) -> {"mtime": float, "resources": [...], "path": str}
+
 def _resources_paths(subject_dir: str):
     return [
         os.path.join(subject_dir, "resources", "resources.json"),
@@ -535,8 +513,14 @@ def load_resources(subject_dir: str):
     path = next((p for p in _resources_paths(subject_dir) if os.path.exists(p)), None)
     if not path:
         return [], path
+    abs_path = os.path.abspath(path)
+    key = (os.path.abspath(subject_dir), abs_path)
+    mtime = os.path.getmtime(abs_path)
+    cached = _RESOURCES_CACHE.get(key)
+    if cached and cached.get("mtime") == mtime:
+        return (cached.get("resources") or []), cached.get("path", abs_path)
 
-    with open(path, "r", encoding="utf-8") as f:
+    with open(abs_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     # expected: list[{section, items:[{title,url|file,tag}]}]
@@ -568,7 +552,8 @@ def load_resources(subject_dir: str):
             cleaned.append({"title": title, "url": url, "file": file_, "tag": tag})
         normalized.append({"section": section, "items": cleaned})
 
-    return normalized, path
+    _RESOURCES_CACHE[key] = {"mtime": mtime, "resources": normalized, "path": abs_path}
+    return normalized, abs_path
 
 
 def resource_sections(resources):
@@ -2735,21 +2720,36 @@ def resources_file(subject, filename):
     if not os.path.isdir(subject_dir):
         abort(404)
 
-    # prevent escaping
-    clean = os.path.normpath(filename).replace("\\", "/")
-    if clean.startswith("../") or clean.startswith(".."):
-        abort(400)
-
     files_dir = os.path.join(subject_dir, "resources", "files")
     if not os.path.isdir(files_dir):
         abort(404)
 
-    full = os.path.join(files_dir, clean)
-    if not os.path.exists(full):
+    # Reject absolute and drive-letter paths early.
+    if os.path.isabs(filename) or re.match(r"^[A-Za-z]:", filename or ""):
+        abort(404)
+
+    clean = os.path.normpath(filename or "").replace("\\", "/")
+    if not clean or clean in (".", "/"):
+        abort(404)
+
+    # Reject traversal segments after normalization.
+    parts = [p for p in clean.split("/") if p]
+    if ".." in parts:
+        abort(404)
+
+    base_real = os.path.realpath(files_dir)
+    full_real = os.path.realpath(os.path.join(base_real, clean))
+    try:
+        if os.path.commonpath([base_real, full_real]) != base_real:
+            abort(404)
+    except ValueError:
+        abort(404)
+
+    if not os.path.exists(full_real):
         abort(404)
 
     # send_from_directory needs directory + relative path
-    return send_from_directory(files_dir, clean)
+    return send_from_directory(base_real, clean)
 
 
 @app.route("/resources_raw/<subject>")
