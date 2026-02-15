@@ -572,138 +572,199 @@ LIBRARY_HTML = """
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Study Library</title>
+  <title>CLEP Study Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --card2:#0c1628;
-      --text:#e6edf7;
-      --muted:#9fb0c7;
-      --accent:#63b3ed;
-      --border:rgba(255,255,255,0.10);
-      --shadow: 0 14px 40px rgba(0,0,0,0.35);
+    :root {
+      --bg: #f5f1e8;
+      --ink: #11242a;
+      --paper: #fffcf6;
+      --paper-alt: #f1e8d8;
+      --line: #d8c9ae;
+      --hot: #c35f2b;
+      --hot-dark: #9d4520;
+      --cool: #2b7d78;
+      --shadow: 0 18px 34px rgba(17, 36, 42, 0.14);
     }
-    body{
-      margin:0;
-      font-family: Inter, Segoe UI, system-ui, -apple-system, sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(99,179,237,0.25), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(88,101,242,0.18), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      min-height:100vh;
-      padding: 40px 18px 60px;
-      box-sizing:border-box;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 550px at -5% -10%, #ffd7ac 0%, transparent 58%),
+        radial-gradient(680px 480px at 105% 10%, #c7ebe6 0%, transparent 62%),
+        linear-gradient(180deg, #f8f4ec 0%, var(--bg) 42%, #efe5d5 100%);
+      padding: 28px 16px 44px;
     }
-    .wrap{max-width:1100px;margin:0 auto;}
-    .top{
-      display:flex;
-      gap:14px;
-      align-items:flex-end;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      margin-bottom:18px;
+    .wrap {
+      width: min(1120px, 100%);
+      margin: 0 auto;
     }
-    .title{
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      margin:0;
-    }
-    .subtitle{
-      margin:6px 0 0;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    .search{
-      min-width: 260px;
-      max-width: 420px;
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      outline: none;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.20);
-    }
-    .search::placeholder{color: rgba(230,237,247,0.55);}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .card{
-      display:block;
-      text-decoration:none;
-      color: var(--text);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 16px 16px 14px;
+    .hero {
+      background: linear-gradient(145deg, rgba(255,252,246,0.92), rgba(241,232,216,0.9));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 22px;
       box-shadow: var(--shadow);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-      position: relative;
-      overflow:hidden;
+      backdrop-filter: blur(3px);
+      animation: rise .45s ease-out both;
     }
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-2px -2px auto -2px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), rgba(99,179,237,0.2), transparent);
-      opacity:0.9;
-    }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(99,179,237,0.35);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-    }
-    .card-title{
-      font-weight: 900;
-      font-size: 16px;
-      line-height: 1.25;
-      margin: 2px 0 10px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 7px 10px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(99,179,237,0.14);
-      border: 1px solid rgba(99,179,237,0.22);
-      color: rgba(230,237,247,0.95);
-      font-weight: 800;
-      font-size: 12px;
+      font: 500 11px/1 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--hot-dark);
+      background: rgba(195, 95, 43, 0.14);
+      border: 1px solid rgba(195, 95, 43, 0.32);
     }
-    .meta{
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 10px;
+    .title {
+      margin: 12px 0 6px;
+      font-size: clamp(1.8rem, 1.3rem + 2vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: -.02em;
     }
-    .empty{
+    .subtitle {
+      margin: 0;
+      max-width: 720px;
+      font-size: 1.02rem;
+      color: rgba(17, 36, 42, 0.82);
+    }
+    .controls {
       margin-top: 18px;
-      padding: 18px;
-      border: 1px dashed var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+    .search {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+      font: 500 .95rem/1.2 "Space Grotesk", sans-serif;
+      color: var(--ink);
+      outline: none;
+    }
+    .search:focus {
+      border-color: var(--cool);
+      box-shadow: 0 0 0 3px rgba(43,125,120,.14);
+    }
+    .count {
+      min-width: 130px;
+      border-radius: 13px;
+      border: 1px solid rgba(43,125,120,.35);
+      background: rgba(43,125,120,.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      font: 500 12px/1 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #1e625d;
+    }
+    .grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
       border-radius: 18px;
-      color: var(--muted);
+      background: linear-gradient(160deg, rgba(255,255,255,0.9), rgba(246,237,223,0.9));
+      box-shadow: 0 8px 20px rgba(17, 36, 42, 0.07);
+      padding: 14px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: rise .45s ease-out both;
+      animation-delay: var(--delay, 0s);
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -10%;
+      width: 78%;
+      height: 75%;
+      background: linear-gradient(135deg, rgba(195,95,43,.2), rgba(195,95,43,0));
+      border-radius: 28px;
+      pointer-events: none;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(43,125,120,.55);
+      box-shadow: 0 16px 28px rgba(17, 36, 42, 0.13);
+    }
+    .card-label {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 9px;
+      border: 1px solid rgba(195,95,43,.32);
+      background: rgba(195,95,43,.12);
+      color: var(--hot-dark);
+      font: 500 11px/1 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+    .card-title {
+      margin: 12px 0 4px;
+      font-size: 1.12rem;
       font-weight: 700;
-      background: rgba(255,255,255,0.03);
+      line-height: 1.24;
+      position: relative;
+      z-index: 1;
+    }
+    .card-meta {
+      margin-top: 12px;
+      font-size: .83rem;
+      color: rgba(17, 36, 42, 0.7);
+      position: relative;
+      z-index: 1;
+    }
+    .empty {
+      margin-top: 16px;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      background: rgba(255,255,255,.72);
+      color: rgba(17, 36, 42, 0.8);
+      font-weight: 500;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 700px) {
+      .hero { padding: 18px; border-radius: 20px; }
+      .controls { grid-template-columns: 1fr; }
+      .count { min-height: 42px; justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <div>
-<h1 class="title">🚀 CLEP Command Center</h1>
-      <p class="subtitle">Accelerated Exam Preparation & Mastery</p>
+    <div class="hero">
+      <span class="badge">CLEP Workspace</span>
+      <h1 class="title">Build Exam Momentum</h1>
+      <p class="subtitle">Jump into any subject hub, review notes fast, and keep your study loop tight and focused.</p>
+      <div class="controls">
+        <input id="q" class="search" placeholder="Search subjects..." autocomplete="off">
+        <div class="count"><span id="visible-count">{{ books|length }}</span> Active Subjects</div>
       </div>
-      <input id="q" class="search" placeholder="Search subjects…" autocomplete="off">
     </div>
 
     {% if books|length == 0 %}
@@ -711,10 +772,10 @@ LIBRARY_HTML = """
     {% else %}
       <div id="grid" class="grid">
         {% for book in books %}
-          <a class="card" href="/study/{{ book }}" data-name="{{ book|lower }}">
-            <div class="pill">📚 Subject</div>
+          <a class="card" href="/study/{{ book }}" data-name="{{ book|lower }}" style="--delay: {{ loop.index0 * 0.04 }}s;">
+            <div class="card-label">Subject</div>
             <div class="card-title">{{ book|replace('_',' ')|title }}</div>
-            <div class="meta">Open study hub</div>
+            <div class="card-meta">Open study hub</div>
           </a>
         {% endfor %}
       </div>
@@ -724,9 +785,16 @@ LIBRARY_HTML = """
   <script>
     const q = document.getElementById('q');
     const cards = Array.from(document.querySelectorAll('.card'));
+    const visibleCount = document.getElementById('visible-count');
     function filter(){
       const v = (q.value || '').trim().toLowerCase();
-      cards.forEach(c => c.style.display = c.dataset.name.includes(v) ? '' : 'none');
+      let shown = 0;
+      cards.forEach(c => {
+        const on = c.dataset.name.includes(v);
+        c.style.display = on ? '' : 'none';
+        if (on) shown += 1;
+      });
+      if (visibleCount) visibleCount.textContent = shown;
     }
     q && q.addEventListener('input', filter);
   </script>
@@ -740,7 +808,9 @@ STUDY_HTML = r"""
 <head>
   <title>{{ display_subject }}</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Markmap deps (LOCAL) -->
   <script src="{{ url_for('static', filename='vendor/markmap/d3.min.js') }}"></script>
@@ -748,11 +818,25 @@ STUDY_HTML = r"""
   <script src="{{ url_for('static', filename='vendor/markmap/markmap-view.js') }}"></script>
 
   <style>
+    :root {
+      --bg: #f5f1e8;
+      --ink: #11242a;
+      --paper: #fffcf6;
+      --paper-alt: #f1e8d8;
+      --line: #d8c9ae;
+      --hot: #c35f2b;
+      --hot-dark: #9d4520;
+      --cool: #2b7d78;
+    }
     html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f0f2f5;
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 550px at -5% -10%, #ffd7ac 0%, transparent 58%),
+        radial-gradient(680px 480px at 105% 10%, #c7ebe6 0%, transparent 62%),
+        linear-gradient(180deg, #f8f4ec 0%, var(--bg) 42%, #efe5d5 100%);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -761,8 +845,8 @@ STUDY_HTML = r"""
     /* --- TOP NAV --- */
     .top-nav {
       height: 60px;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
+      background: rgba(255,252,246,0.92);
+      border-bottom: 1px solid var(--line);
       padding: 0 18px;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
@@ -774,26 +858,45 @@ STUDY_HTML = r"""
     .nav-left, .nav-right { display: flex; gap: 10px; align-items: center; }
     .nav-right { justify-content: flex-end; }
     .nav-center {
-      font-weight: 900;
-      color: #2d3748;
+      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--ink);
       display: flex;
       align-items: center;
       gap: 8px;
       white-space: nowrap;
     }
     .tool-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 12px;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       font-size: 13px;
-      font-weight: 700;
-      border: 1px solid #e2e8f0;
-      background: #f7fafc;
-      color: #4a5568;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
       user-select: none;
     }
-    .tool-btn:hover { background: #edf2f7; }
-    .tool-btn.active { background: #2d3748; border-color: #2d3748; color: #fff; }
+    .tool-icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .tool-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .tool-label {
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+    .tool-btn:hover { background: var(--paper-alt); }
+    .tool-btn.active { background: var(--hot); border-color: var(--hot-dark); color: #fff7ee; }
 
     /* --- MAIN LAYOUT --- */
     .main-row { flex: 1; display: flex; min-height: 0; }
@@ -804,8 +907,8 @@ STUDY_HTML = r"""
       position: relative;
       z-index: 5;
       margin: 20px;
-      background: rgba(44, 62, 80, 0.98);
-      color: white;
+      background: rgba(17, 36, 42, 0.96);
+      color: #f6f1e7;
       border-radius: 18px;
       overflow: hidden;
       display: flex;
@@ -817,21 +920,32 @@ STUDY_HTML = r"""
     body.tool-mode #sidebar { display: none; }
 
     .home-btn {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 14px 18px;
-      color: #cbd5e0;
+      color: #f1e7d4;
       text-decoration: none;
       font-weight: 700;
       font-size: 13px;
-      background: rgba(0,0,0,0.12);
+      background: rgba(0,0,0,0.16);
     }
-    .home-btn:hover { background: rgba(0,0,0,0.18); }
+    .home-btn:hover { background: rgba(0,0,0,0.24); }
+    .subject-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255,252,246,0.75);
+    }
 
     .header {
       padding: 16px 18px;
       font-weight: 900;
       font-size: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
     }
 
     #toc-notes, #toc-tables, #toc-flashcards, #toc-quiz, #toc-resources {
@@ -878,13 +992,13 @@ STUDY_HTML = r"""
       margin-bottom: 10px;
       border-radius: 12px;
       background: rgba(255,255,255,0.06);
-      color: #cbd5e0;
+      color: #efe8d9;
       text-decoration: none;
       font-size: 0.9rem;
       transition: 0.2s;
     }
     .toc-item:hover { background: rgba(255,255,255,0.12); }
-    .toc-item.active { background: #63b3ed !important; color: white !important; font-weight: 900; }
+    .toc-item.active { background: var(--hot) !important; color: #fff8ee !important; font-weight: 700; }
 
     /* Nested TOC levels (notes) */
     .toc-h1 { font-weight: 900; color: #fff; }
@@ -896,13 +1010,13 @@ STUDY_HTML = r"""
     .pill-btn{
       padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid #e2e8f0;
-      background: #ffffff;
-      color: #0f172a;
-      font-weight: 800;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 700;
       cursor: pointer;
     }
-    .pill-btn:hover{ background:#f8fafc; }
+    .pill-btn:hover{ background:var(--paper-alt); }
 /* Collapse notes by default */
     .toc-h2, .toc-h3 { display: none; }
 
@@ -912,10 +1026,10 @@ STUDY_HTML = r"""
       gap: 10px;
       padding: 12px 14px;
       margin: 18px 18px 0;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
+      background: var(--paper);
+      border: 1px solid var(--line);
       border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 18px rgba(17,36,42,0.08);
     }
     /* Only show in notes */
     body.datatable-mode #content-nav,
@@ -927,13 +1041,13 @@ STUDY_HTML = r"""
       flex: 1;
       padding: 10px 12px;
       border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      background: #f1f5f9;
-      color: #0f172a;
-      font-weight: 800;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 700;
       cursor: pointer;
     }
-    .nav-btn:hover{ background:#e8eef6; }
+    .nav-btn:hover{ background:var(--paper-alt); }
     .nav-btn:disabled{
       opacity: 0.45;
       cursor: not-allowed;
@@ -949,9 +1063,9 @@ STUDY_HTML = r"""
       max-width: 900px;
       margin: 20px auto;
       padding: 40px;
-      background: white;
+      background: var(--paper);
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(17,36,42,0.08);
       min-height: 60vh;
       line-height: 1.7;
       overflow: auto;
@@ -978,9 +1092,9 @@ STUDY_HTML = r"""
     }
 
     .panel {
-      background: #fff;
+      background: var(--paper);
       border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(17,36,42,0.08);
       overflow: hidden;
       height: calc(100% - 40px);
       margin: 20px auto;
@@ -990,16 +1104,16 @@ STUDY_HTML = r"""
     }
     .panel-header {
       padding: 12px 16px;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
     }
     .panel-title { font-weight: 900; }
-    .panel-link { font-size: 13px; font-weight: 800; color: #2b6cb0; text-decoration: none; }
+    .panel-link { font-size: 13px; font-weight: 700; color: var(--cool); text-decoration: none; }
     .panel-link:hover { text-decoration: underline; }
-    .panel-body { flex: 1; min-height: 0; background: #f8fafc; position: relative; }
+    .panel-body { flex: 1; min-height: 0; background: #f7efe0; position: relative; }
 
     /* Slide iframe */
     #slide-iframe { width: 100%; height: 100%; border: 0; background: #fff; }
@@ -1289,25 +1403,25 @@ STUDY_HTML = r"""
 <body>
 <div class="top-nav">
   <div class="nav-left">
-    <div class="tool-btn active" id="btn-notes" onclick="selectTool('notes')">📖 Study Guide</div>
-    <div class="tool-btn" id="btn-slidedeck" onclick="selectTool('slidedeck')">🖼️ Slide Deck</div>
-    <div class="tool-btn" id="btn-mindmap" onclick="selectTool('mindmap')">🧠 Mindmap</div>
-    <div class="tool-btn" id="btn-flashcards" onclick="selectTool('flashcards')">📇 Flashcards</div>
+    <div class="tool-btn active" id="btn-notes" onclick="selectTool('notes')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><line x1="9" y1="8" x2="15" y2="8"></line><line x1="9" y1="12" x2="15" y2="12"></line></svg></span><span class="tool-label">Study Guide</span></div>
+    <div class="tool-btn" id="btn-slidedeck" onclick="selectTool('slidedeck')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="12" rx="2"></rect><line x1="12" y1="16.5" x2="12" y2="20.5"></line><line x1="9" y1="20.5" x2="15" y2="20.5"></line></svg></span><span class="tool-label">Slide Deck</span></div>
+    <div class="tool-btn" id="btn-mindmap" onclick="selectTool('mindmap')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.3"></circle><circle cx="18" cy="7" r="2.3"></circle><circle cx="18" cy="17" r="2.3"></circle><line x1="8.3" y1="11.2" x2="15.7" y2="7.8"></line><line x1="8.3" y1="12.8" x2="15.7" y2="16.2"></line></svg></span><span class="tool-label">Mindmap</span></div>
+    <div class="tool-btn" id="btn-flashcards" onclick="selectTool('flashcards')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="9" rx="1.8"></rect><path d="M4 9V5.8A1.8 1.8 0 0 1 5.8 4H16"></path><path d="M8 18h10.2a1.8 1.8 0 0 0 1.8-1.8V9"></path></svg></span><span class="tool-label">Flashcards</span></div>
   </div>
 
-  <div class="nav-center">📚 {{ display_subject }}</div>
+  <div class="nav-center"><span class="subject-chip"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5l1.4 2.8 3 .4-2.2 2.1.5 3.1L12 14.4 9.3 16l.5-3.1-2.2-2.1 3-.4z"></path></svg></span><span class="tool-label">{{ display_subject }}</span></span></div>
 
   <div class="nav-right">
-    <div class="tool-btn" id="btn-quiz" onclick="selectTool('quiz')">✍️ Quiz</div>
-    <div class="tool-btn" id="btn-datatable" onclick="selectTool('datatable')">📊 Data Table</div>
-    <div class="tool-btn" id="btn-resources" onclick="selectTool('resources')">🔗 Resources</div>
+    <div class="tool-btn" id="btn-quiz" onclick="selectTool('quiz')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"></rect><line x1="9" y1="8" x2="15" y2="8"></line><path d="M9.2 12.4l1.5 1.6 3.1-3.3"></path></svg></span><span class="tool-label">Quiz</span></div>
+    <div class="tool-btn" id="btn-datatable" onclick="selectTool('datatable')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"></rect><line x1="4" y1="10" x2="20" y2="10"></line><line x1="10" y1="10" x2="10" y2="19"></line><line x1="15" y1="10" x2="15" y2="19"></line></svg></span><span class="tool-label">Data Table</span></div>
+    <div class="tool-btn" id="btn-resources" onclick="selectTool('resources')"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 13.8l3.6-3.6"></path><path d="M8.1 16a3 3 0 0 1-4.2 0 3 3 0 0 1 0-4.2l2.8-2.8a3 3 0 0 1 4.2 0"></path><path d="M15.9 8a3 3 0 0 1 4.2 0 3 3 0 0 1 0 4.2l-2.8 2.8a3 3 0 0 1-4.2 0"></path></svg></span><span class="tool-label">Resources</span></div>
   </div>
 </div>
 
 
   <div class="main-row">
     <div id="sidebar">
-      <a class="home-btn" href="/">← Back to Library</a>
+      <a class="home-btn" href="/"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.8 12 4l8.5 6.8"></path><path d="M6.5 9.7V20h11V9.7"></path></svg></span><span class="tool-label">Back to Library</span></a>
       <div class="header" id="sidebar-title">Chapters</div>
 
       <div id="toc-notes"></div>
@@ -1320,8 +1434,8 @@ STUDY_HTML = r"""
 
     <div id="content">
       <div id="content-nav">
-        <button id="prev-btn" class="nav-btn" onclick="goRelative(-1)">◀ Previous</button>
-        <button id="next-btn" class="nav-btn" onclick="goRelative(1)">Next ▶</button>
+        <button id="prev-btn" class="nav-btn" onclick="goRelative(-1)">Previous</button>
+        <button id="next-btn" class="nav-btn" onclick="goRelative(1)">Next</button>
       </div>
       <div id="display-area">Loading...</div>
     </div>
@@ -1722,7 +1836,7 @@ STUDY_HTML = r"""
       displayArea.innerHTML = `
         <div class="panel">
           <div class="panel-header">
-            <div class="panel-title">Data Table — <span id="dt-sheet-name">${escapeHtml(sheetName || "")}</span></div>
+            <div class="panel-title">Data Table - <span id="dt-sheet-name">${escapeHtml(sheetName || "")}</span></div>
             <a class="panel-link" id="dt-open-raw" href="#" target="_blank" rel="noopener">Open raw</a>
           </div>
 
@@ -1742,9 +1856,9 @@ STUDY_HTML = r"""
           </div>
 
           <div class="dt-pager">
-            <button id="dt-prev">◀</button>
+            <button id="dt-prev">Prev</button>
             <div class="dt-meta" id="dt-page">1 / 1</div>
-            <button id="dt-next">▶</button>
+            <button id="dt-next">Next</button>
           </div>
         </div>
       `;
@@ -1844,7 +1958,7 @@ STUDY_HTML = r"""
 
         let html = "<thead><tr>";
         for (const c of columns) {
-          const arrow = (sortCol === c) ? (sortDir === 'asc' ? '▲' : '▼') : '';
+          const arrow = (sortCol === c) ? (sortDir === 'asc' ? '^' : 'v') : '';
           html += `<th data-col="${encodeURIComponent(c)}">${escapeHtml(c)}<span class="dt-sort">${arrow}</span></th>`;
         }
         html += "</tr></thead>";
@@ -1917,11 +2031,11 @@ STUDY_HTML = r"""
           <div class="fc-toolbar">
             <div class="fc-pill" id="fc-module-pill">Module: -</div>
             <div class="fc-pill" id="fc-progress">0 / 0</div>
-            <button class="fc-btn" id="fc-prev">◀ Prev</button>
+            <button class="fc-btn" id="fc-prev">Prev</button>
             <button class="fc-btn" id="fc-flip">Flip</button>
-            <button class="fc-btn" id="fc-next">Next ▶</button>
+            <button class="fc-btn" id="fc-next">Next</button>
           </div>
-          <div class="fc-hint">Click card or press <b>Space</b> to flip. Use <b>←</b>/<b>→</b> for prev/next.</div>
+          <div class="fc-hint">Click card or press <b>Space</b> to flip. Use <b>Left</b>/<b>Right</b> for prev/next.</div>
 
           <div class="fc-card-wrap">
             <div class="fc-card" id="fc-card"></div>
@@ -2108,9 +2222,9 @@ STUDY_HTML = r"""
           <div class="qz-toolbar">
             <div class="qz-pill" id="qz-module-pill">Module: -</div>
             <div class="qz-pill" id="qz-progress">0 / 0</div>
-            <button class="qz-btn" id="qz-prev">◀ Prev</button>
+            <button class="qz-btn" id="qz-prev">Prev</button>
             <button class="qz-btn" id="qz-submit">Submit</button>
-            <button class="qz-btn" id="qz-next">Next ▶</button>
+            <button class="qz-btn" id="qz-next">Next</button>
           </div>
           <div class="qz-hint">Pick an option, then <b>Submit</b>. Use Prev/Next to navigate.</div>
 
@@ -2249,7 +2363,7 @@ STUDY_HTML = r"""
       });
 
       const isRight = (qSelected === correct);
-      const resultText = isRight ? "✅ Correct" : `❌ Incorrect (Correct: ${escapeHtml(correct)})`;
+      const resultText = isRight ? "Correct" : `Incorrect (Correct: ${escapeHtml(correct)})`;
 
       let html = `<div class="qz-result">${resultText}</div>`;
 
@@ -2322,7 +2436,7 @@ STUDY_HTML = r"""
             <div class="rs-pill" id="rs-section-pill">Section: -</div>
             <div class="rs-pill" id="rs-count-pill">0 items</div>
           </div>
-          <div class="rs-hint">Links open in a new tab. Local files open from your subject’s <b>resources/files/</b>.</div>
+          <div class="rs-hint">Links open in a new tab. Local files open from your subject's <b>resources/files/</b>.</div>
 
           <div class="rs-wrap" id="rs-wrap"></div>
         </div>
@@ -2767,3 +2881,5 @@ def resources_raw(subject):
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
+
+
